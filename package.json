@@ -1,0 +1,34 @@
+{
+  "name": "leafer-pdf-plugin",
+  "version": "0.0.1",
+  "description": "pdf loves leaferjs",
+  "main": "dist/index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/reduce4/leafer-pdf-plugin.git"
+  },
+  "dependencies": {
+    "@leafer-ui/interface": "^1.0.0-beta.6",
+    "promise-worker": "^2.0.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.15",
+    "@types/react-dom": "^18.2.7",
+    "@vitejs/plugin-react": "^4.0.3",
+    "leafer-ui": "^1.0.0-beta.6",
+    "vite": "^4.4.5"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/reduce4/leafer-pdf-plugin/issues"
+  },
+  "homepage": "https://github.com/reduce4/leafer-pdf-plugin#readme"
+}
