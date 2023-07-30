@@ -41,53 +41,10 @@ class MuWrapper {
 
 
 class MuBackend extends MuWrapper {
-    pageInfo;
-    render;
-    interact;
     async _init(url) {
         await this.loadModule();
         await this.mu_openDocumentFromBuffer(url);
-        await this._initPages("No name");
-        await this._initRender();
-        await this._initInteract();
-    }
-
-
-    async _initPages(_title) {
-        const pagesCount = await this.mu_countPages();
-        const widths = new Uint32Array(pagesCount + 1);
-        const heights = new Uint32Array(pagesCount + 1);
-        let title = await this.mu_documentTitle()
-        if (title) title = _title;
-        for (var i = 1; i <= pagesCount; i++) {
-            const width = await this.mu_pageWidth(i);
-            const height = await this.mu_pageHeight(i);
-            widths[i] = width;
-            heights[i] = height;
-        }
-        this.pageInfo = {
-            docName: title,
-            pagesCount,
-            pagesWidth: widths,
-            pagesHeight: heights
-        }
-    }
-    async _initRender() {
-        this.render = {
-            renderSVG: async (pageNo) => await this.mu_drawPageAsSvg(pageNo, 0),
-            renderText: async (pageNo, dpi) => await this.mu_pageText(pageNo, dpi)
-        }
-    }
-    async _initInteract() {
-        this.interact = {
-            getOutline: async () => {
-                const outline = await this.mu_outline()
-                if (outline == null || outline == "") {
-                    return {}
-                }
-                return JSON.parse(outline)
-            }
-        }
+        return this;
     }
 }
 

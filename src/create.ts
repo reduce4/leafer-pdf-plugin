@@ -1,21 +1,16 @@
-import {
-  IPlugin,
-  IObject,
-  ILeaferTypeCreator,
-  ILeafer,
-} from "@leafer-ui/interface";
-import MuBackend from "./lib/MuBackend.js";
+import { IPlugin, IObject } from "@leafer-ui/interface";
+import PdfLoader, { IPdfLoader, LoadParams } from "./PdfLoader";
 
-export const plugin: IPlugin = {
+export const PDF: IPlugin = {
   name: "leafer-pdf-plugin",
-  importVersion: "1.0.0-beta.6",
-  import: ["LeaferTypeCreator"],
-  run(LeaferUI: IObject): void {
-    const LeaferTypeCreator: ILeaferTypeCreator = LeaferUI.LeaferTypeCreator;
-    LeaferTypeCreator.register("board", pdfType);
+  importVersion: "1.0.0-beta.7",
+  import: ["Leafer"],
+  run(LeaferUI: IObject, config?: IObject): void {
+    PDF.Loader = PdfLoader;
+  },
+  async load(url: string, loadParams?: LoadParams): Promise<IPdfLoader> {
+    const loader: IPdfLoader = new PDF.Loader();
+    await loader.load(url, loadParams);
+    return loader;
   },
 };
-
-function pdfType(leafer: ILeafer) {
-  leafer.backend = MuBackend;
-}
