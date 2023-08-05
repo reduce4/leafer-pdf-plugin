@@ -1,10 +1,8 @@
 import PromiseWorker from 'promise-worker'
+import worker from './MuWorker?worker'
 class MuWrapper {
     async loadModule() {
-        const worker = new Worker(new URL('MuWorker.js', import.meta.url), {
-            type: 'module'
-        });
-        this.mu_worker = new PromiseWorker(worker);
+        this.mu_worker = new PromiseWorker(worker());
     }
     mu_worker;
     mu_openDocumentFromBuffer = (url) => {
