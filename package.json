@@ -1,6 +1,6 @@
 {
   "name": "leafer-pdf-plugin",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "pdf loves leaferjs",
   "private": false,
   "main": "dist/leafer-pdf-plugin-lib.umd.js",
@@ -20,12 +20,12 @@
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^4.0.3",
-    "vite": "^4.4.5",
     "antd": "^5.7.3",
+    "leafer-pdf-plugin": "0.0.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.14.2",
-    "leafer-pdf-plugin": "*"
+    "vite": "^4.4.5"
   },
   "keywords": [],
   "author": "",
