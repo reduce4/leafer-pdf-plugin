@@ -1,7 +1,7 @@
 import PromiseWorker from 'promise-worker'
 class MuWrapper {
     async loadModule() {
-        const worker = new Worker(new URL('./MuWorker.js', import.meta.url), {
+        const worker = new Worker(new URL('MuWorker.js', import.meta.url), {
             type: 'module'
         });
         this.mu_worker = new PromiseWorker(worker);
