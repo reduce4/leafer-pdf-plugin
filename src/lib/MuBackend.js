@@ -1,5 +1,5 @@
 import PromiseWorker from 'promise-worker'
-import worker from './MuWorker?worker'
+import worker from './MuWorker?worker&inline'
 class MuWrapper {
     async loadModule() {
         this.mu_worker = new PromiseWorker(worker());
