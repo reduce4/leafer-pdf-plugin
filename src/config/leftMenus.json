@@ -1,0 +1,7 @@
+[
+    {
+        "key": "1",
+        "label": "默认pdf文件演示",
+        "router": "/defaultPdf"
+    }
+]
