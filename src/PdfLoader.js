@@ -1,4 +1,4 @@
-import MuBackend from "./lib/MuBackend.js";
+import MuBackend from "./MuBackend.js";
 import { Group, Image } from "leafer-ui";
 
 

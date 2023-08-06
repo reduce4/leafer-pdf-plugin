@@ -1,5 +1,5 @@
 import registerPromiseWorker from 'promise-worker/register';
-import Module from './libmupdf'
+import Module from './lib/libmupdf'
 
 const muModulePromise = Module()
 const muModuleFunctions = muModulePromise.then(muModule => {

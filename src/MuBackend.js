@@ -1,8 +1,11 @@
 import PromiseWorker from 'promise-worker'
-import worker from './MuWorker?worker'
 class MuWrapper {
     async loadModule() {
-        this.mu_worker = new PromiseWorker(worker());
+        const worker = new Worker(new URL('./MuWorker.js', import.meta.url), {
+            type: 'module'
+        });
+        // 根据URL计算资源的路径
+        this.mu_worker = new PromiseWorker(worker);
     }
     mu_worker;
     mu_openDocumentFromBuffer = (url) => {
