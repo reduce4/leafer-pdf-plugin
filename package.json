@@ -1,10 +1,10 @@
 {
   "name": "leafer-pdf-plugin",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "pdf loves leaferjs",
   "private": false,
-  "main": "dist/leafer-pdf-plugin-lib.umd.js",
-  "module": "dist/leafer-pdf-plugin-lib.es.js",
+  "main": "dist/index-34bd0f78.js",
+  "module": "dist/index-34bd0f78.js",
   "scripts": {
     "dev": "vite",
     "build": "vite build && node CopyWasmToDist.cjs"
@@ -19,10 +19,9 @@
     "promise-worker": "^2.0.1"
   },
   "devDependencies": {
-    "rollup-plugin-web-worker-loader": "^1.6.1",
     "@vitejs/plugin-react": "^4.0.3",
     "antd": "^5.7.3",
-    "leafer-pdf-plugin": "0.0.5",
+    "leafer-pdf-plugin": "^0.0.6",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.14.2",
