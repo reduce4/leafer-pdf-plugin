@@ -1,20 +1,9 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 
-const wasmPlugin = () => {
-  return {
-    name: 'wasmPlugin',
-    transform(code, id) {
-      if (id.endsWith("MuWorker.js?worker")) {
-        console.log('code', code);
-      }
-      return code;
-    }
-  }
-}
+
 export default defineConfig({
-  plugins: [react(),
-  wasmPlugin()
+  plugins: [react()
   ],
   // 打包配置
   build: {
