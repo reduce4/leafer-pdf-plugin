@@ -15,6 +15,14 @@ npm run dev
 
 ## usage
 
+### install
+
+```js
+npm i leafer-pdf-plugin
+```
+
+### use
+
 ```js
 import { PDF } from "leafer-pdf-plugin";
 import { Leafer, usePlugin } from "leafer-ui";
