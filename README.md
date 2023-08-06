@@ -2,6 +2,10 @@
 
 pdf loves leaferjs
 
+## show
+
+![show](show.png)
+
 ## run demo project
 
 ```shell
